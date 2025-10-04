@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="garbi.supersudoku.controller.MenuController"
+            style="-fx-background-color: #d3d3d3;"
+            stylesheets="@menu.css">
+
+    <!-- Fondo de números -->
+    <Pane fx:id="numbersPane" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"/>
+
+    <!-- Contenedor central -->
+    <VBox alignment="CENTER" spacing="20"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <Button fx:id="btnJugar" text="Jugar" styleClass="menu-button, button-min" maxWidth="200"/>
+        <Button fx:id="btnRecords" text="Proximamente" styleClass="menu-button, button-min" maxWidth="200"/>
+        <Button fx:id="btnSalir" text="Salir" styleClass="menu-button, button-min" maxWidth="200"/>
+    </VBox>
+    <!-- Barra inferior -->
+    <HBox AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10"
+          alignment="CENTER_LEFT" spacing="10">
+
+        <!-- Sección izquierda: GitHub -->
+        <HBox alignment="CENTER_LEFT" spacing="5">
+            <!-- Icono de GitHub -->
+            <ImageView fitWidth="20" fitHeight="20" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@imgs/github-mark.png"/>
+                </image>
+            </ImageView>
+
+            <!-- Texto con enlace -->
+            <Hyperlink fx:id="githubLink" text="Garbi-Collector" />
+        </HBox>
+
+        <!-- Espaciador -->
+        <Pane HBox.hgrow="ALWAYS"/>
+
+        <!-- Sección derecha: versión -->
+        <Label text="v0.1"/>
+    </HBox>
+
+</AnchorPane>

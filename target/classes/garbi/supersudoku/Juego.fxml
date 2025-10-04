@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="garbi.supersudoku.controller.JuegoController"
+            style="-fx-background-color: #d3d3d3;"
+            stylesheets="@menu.css">
+
+    <!-- Fondo de números -->
+    <Pane fx:id="numbersPane" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"/>
+
+    <!-- Botón de regresar -->
+    <Button fx:id="btnBack" text="←" styleClass="menu-button, button-min"
+            AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" maxWidth="50"/>
+
+    <!-- Contenedor principal -->
+    <VBox alignment="CENTER" spacing="25"
+          AnchorPane.topAnchor="80" AnchorPane.bottomAnchor="50"
+          AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50">
+
+        <!-- Tablero de Sudoku -->
+        <GridPane fx:id="sudokuGrid"
+                  alignment="CENTER"
+                  style="-fx-background-color: #4b2e83; -fx-padding: 4; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 3);"
+                  maxWidth="Infinity" maxHeight="Infinity"/>
+
+        <!-- Botones de control -->
+        <HBox alignment="CENTER" spacing="20">
+            <Button fx:id="btnNuevoJuego"
+                    text="Nuevo"
+                    onAction="#generarNuevoJuego"
+                    styleClass="menu-button, button-min"
+                    maxWidth="150"/>
+            <Button fx:id="btnVerificar"
+                    text="Verificar"
+                    onAction="#verificarSolucion"
+                    styleClass="menu-button, button-min"
+                    maxWidth="150"/>
+        </HBox>
+    </VBox>
+
+</AnchorPane>
